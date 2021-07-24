@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack</title>
+<link href="style.css" rel="stylesheet"></head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__content _container">
+            </div>
+        </header>
+        <main class="page">
+
+            <div class="preview">
+                <div class="preview__content _container">
+                    <div class="preview__row">
+                        <div class="preview__img"><img src="./img/preview/img01.jpg" alt="Картинка"></div>
+                        <div class="preview__block">
+                            <div class="preview__title">ОБОИ SONNI</div>
+                            <div class="preview__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident totam distinctio quibusdam molestias ipsa delectus eum dignissimos. Nisi totam culpa, harum deserunt laboriosam est consequuntur corrupti? Doloribus architecto, voluptates perferendis ipsa similique officiis. Molestias recusandae aspernatur neque. Cupiditate rerum commodi numquam nesciunt deleniti impedit sapiente expedita, doloremque quisquam eaque mollitia repellat rem voluptas inventore. Qui officia est nisi ipsa accusantium aut laudantium numquam labore in vitae. Doloremque sunt eaque blanditiis molestiae voluptate quasi maxime odio ut commodi similique, provident, nulla consectetur numquam libero voluptates adipisci tempore tempora inventore eum nostrum cupiditate recusandae. Impedit dolorum placeat quaerat? Quo voluptatibus quos ea.</div>
+                            <div class="preview__colors colors-preview">
+                                <div class="colors-preview__title">Варианты расцветок</div>
+                                <div class="colors-preview__row">
+                                    <div class="colors-preview__item">
+                                        <div class="colors-preview__img"><img src="./img/colors/img01.jpg" alt=""></div>
+                                        <div class="colors-preview__checkmark">
+                                            <span class="colors-preview__numer">№1</span>
+                                            <span class="colors-preview__border _active"></span>
+                                        </div>
+                                    </div>
+                                    <div class="colors-preview__item">
+                                        <div class="colors-preview__img"><img src="./img/colors/img02.jpg" alt=""></div>
+                                        <div class="colors-preview__checkmark">
+                                            <span class="colors-preview__numer">№2</span>
+                                            <span class="colors-preview__border"></span>
+                                        </div>
+                                    </div>
+                                    <div class="colors-preview__item">
+                                        <div class="colors-preview__img"><img src="./img/colors/img03.jpg" alt=""></div>
+                                        <div class="colors-preview__checkmark">
+                                            <span class="colors-preview__numer">№3</span>
+                                            <span class="colors-preview__border"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <span class="line line-m25 _container"></span>
+
+            <div class="order">
+                <div class="order__content _container">
+                    <div class="order__title">ОБОИ SONNI | №1</div>
+                    <div class="order__row">
+                        <div class="order__img"><img src="./img/colors/img01.jpg" alt="картинка"></div>
+                        <div class="order__settings settings-order">
+                            <div class="settings-order__title">Размер стены</div>
+                            <span class="line"></span>
+                            <div class="settings-order__text">Рекомендуемый запас для поклейки - 3-4 см на высоту и ширину</div>
+                            <span class="line"></span>
+                            <div class="settings-order__size size-settings-order">
+                                <div class="size-settings-order__width size-settings-order__width-1 _active">
+                                    <div class="size-settings-order__text"><span>Ширина</span> (см)</div>
+                                    <input type="text" class="size-settings-order__input" value="290">
+                                </div>
+                                <div class="size-settings-order__hight size-settings-order__hight-1 _active">
+                                    <div class="size-settings-order__text"><span>Высота</span> (см)</div>
+                                    <input type="text" class="size-settings-order__input" value="265">
+                                </div>
+                                <div class="size-settings-order__add-or-del size-settings-order__add-or-del-1 _active">
+                                    <div class="size-settings-order__add"><img src="./img/popup/plus.svg" alt=""></div>
+                                </div>
+                                <div class="size-settings-order__width size-settings-order__width-2">
+                                    <div class="size-settings-order__text"><span>Ширина</span> (см)</div>
+                                    <input type="text" class="size-settings-order__input" value="290">
+                                </div>
+                                <div class="size-settings-order__hight size-settings-order__hight-2">
+                                    <div class="size-settings-order__text"><span>Высота</span> (см)</div>
+                                    <input type="text" class="size-settings-order__input" value="265">
+                                </div>
+                                <div class="size-settings-order__add-or-del size-settings-order__add-or-del-2">
+                                    <div class="size-settings-order__del"><img src="./img/popup/del.svg" alt=""></div>
+                                    <div class="size-settings-order__add"><img src="./img/popup/plus.svg" alt=""></div>
+                                </div>
+                                <div class="size-settings-order__width size-settings-order__width-3">
+                                    <div class="size-settings-order__text"><span>Ширина</span> (см)</div>
+                                    <input type="text" class="size-settings-order__input" value="290">
+                                </div>
+                                <div class="size-settings-order__hight size-settings-order__hight-3">
+                                    <div class="size-settings-order__text"><span>Высота</span> (см)</div>
+                                    <input type="text" class="size-settings-order__input" value="265">
+                                </div>
+                                <div class="size-settings-order__add-or-del size-settings-order__add-or-del-3">
+                                    <div class="size-settings-order__del"><img src="./img/popup/del.svg" alt=""></div>
+                                    <div class="size-settings-order__add"><img src="./img/popup/plus.svg" alt=""></div>
+                                </div>
+                                <div class="size-settings-order__width size-settings-order__width-4">
+                                    <div class="size-settings-order__text"><span>Ширина</span> (см)</div>
+                                    <input type="text" class="size-settings-order__input" value="290">
+                                </div>
+                                <div class="size-settings-order__hight size-settings-order__hight-4">
+                                    <div class="size-settings-order__text"><span>Высота</span> (см)</div>
+                                    <input type="text" class="size-settings-order__input" value="265">
+                                </div>
+                                <div class="size-settings-order__add-or-del size-settings-order__add-or-del-4">
+                                    <div class="size-settings-order__del"><img src="./img/popup/del.svg" alt=""></div>
+                                </div>
+                            </div>
+                            <span class="line"></span>
+                            <div class="settings-order__angular angular-settings-order">
+                                <!-- <div class="angular-settings-order__text"><span>Добавить угловые элементы?</span> (м.п.)</div>
+                                <input type="text" class="angular-settings-order__input" value=0> -->
+                                <div class="angular-settings-order__title"><span>Добавить угловые элементы?</span> (cм.п.)</div>
+                                <label class="angular-settings-order__checkbox checkbox">
+                                    <input class="angular-settings-order__checkbox-input" type="checkbox">
+                                    <span class="checkbox-switch"></span>
+                                </label>
+                                <div class="angular-settings-order__input"><input type="text" value=100></div>
+                            </div>
+                            <span class="line"></span>
+                            <div class="settings-order__text">Рекомендуемый запас для поклейки - 3-4 см на высоту и ширину</div>
+                            <span class="line"></span>
+                            <div class="settings-order__trowelling trowelling-settings-order">
+                                <div class="trowelling-settings-order__title">Добавить затирку?</div>
+                                <label class="trowelling-settings-order__checkbox checkbox">
+                                    <input class="trowelling-settings-order__checkbox-input" type="checkbox">
+                                    <span class="checkbox-switch"></span>
+                                </label>
+                                <div class="trowelling-settings-order__row">
+                                    <div class="trowelling-settings-order__item item-order">
+                                        <div class="item-order__img"><img src="./img/info/invoices01.jpg" alt="">
+                                        </div>
+                                        <div class="item-order__checkmark">
+                                            <span class="item-order__border _active"></span>
+                                        </div>
+                                    </div>
+                                    <div class="trowelling-settings-order__item item-order">
+                                        <div class="item-order__img"><img src="./img/info/invoices02.jpg" alt="">
+                                        </div>
+                                        <div class="item-order__checkmark">
+                                            <span class="item-order__border"></span>
+                                        </div>
+                                    </div>
+                                    <div class="trowelling-settings-order__item item-order">
+                                        <div class="item-order__img"><img src="./img/info/invoices03.jpg" alt="">
+                                        </div>
+                                        <div class="item-order__checkmark">
+                                            <span class="item-order__border"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings-order__glue glue-settings-order">
+                                <div class="glue-settings-order__text">Добавить клей?</div>
+                                <label class="glue-settings-order__checkbox checkbox">
+                                    <input class="glue-settings-order__checkbox-input" type="checkbox">
+                                    <span class="checkbox-switch"></span>
+                                </label>
+                            </div>
+                            <!-- <div class="settings-order__impregnation impregnation-settings-order">
+                                <div class="impregnation-settings-order__text">Добавить пропитку для камня?</div>
+                                <label class="impregnation-settings-order__checkbox checkbox">
+                                    <input class="impregnation-settings-order__checkbox-input" type="checkbox">
+                                    <span class="checkbox-switch"></span>
+                                </label>
+                            </div> -->
+                            <span class="line"></span>
+                            <div class="settings-order__explanations">Объем сопутствующих материалов рассчитан из нормативов расхода и может быть пересчитан</div>
+                            <span class="line"></span>
+                            <div class="settings-order__sum">19 213 руб</div>
+                            <div class="settings-order__buy-btn">Оформить заказ</div>
+                            <a href="/" class="settings-order__other-btn">Другие обои</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <footer class="footer">
+            <div class="footer__content _container">
+            </div>
+        </footer>
+    </div>
+
+    <div class="popup-zoom off">
+        <div class="popup-zoom__body">
+            <div class="popup-zoom__img">
+                <img src="./img/info/invoices01.jpg" alt="">
+                <div class="popup-zoom__close"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-form off">
+        <div class="popup-form__close"></div>
+        <div class="popup-form__content _container">
+            <div class="popup-form__details details-popup-form">
+                <div class="details-popup-form-head"><span>Обои SONNI</span></div>
+                <div class="details-popup-form-body">
+                    <div class="details-popup-form-body__img"><img src="./img/colors/img01.jpg" alt=""></div>
+                    <div class="details-popup-form-body__line"></div>
+                    <div class="details-popup-form-body__info">
+                        <div class="details-popup-form-body__article"><span class="details-popup-form-body__title">Вариант расцветки №</span><span class="details-popup-form-body__num">1</span></div>
+                        <div class="details-popup-form-body__quantity"><span class="details-popup-form-body__title">Количество плитки:</span><span class="details-popup-form-body__q">20</span><span>(м2)</span><span class="details-popup-form-body__separator">=</span><span class="details-popup-form-body__price">2500</span><span>р.</span></div>
+                        <div class="details-popup-form-body__angle"><span class="details-popup-form-body__title">Угловые элементы:</span><span class="details-popup-form-body__q">20</span><span>(шт)</span><span class="details-popup-form-body__separator">=</span><span class="details-popup-form-body__price">1300</span><span>р.</span></div>
+                        <div class="details-popup-form-body__trowelling"><span class="details-popup-form-body__title">Затирка №</span><span class="details-popup-form-body__num">№ 1</span><span class="details-popup-form-body__сolons">:</span><span class="details-popup-form-body__q">10</span><span>(шт)</span><span class="details-popup-form-body__separator">=</span><span class="details-popup-form-body__price">500</span><span>р.</span></div>
+                        <div class="details-popup-form-body__glue"><span class="details-popup-form-body__title">Клей:</span><span class="details-popup-form-body__q">20</span><span>(шт)</span><span class="details-popup-form-body__separator">=</span><span class="details-popup-form-body__price">900</span><span>р.</span></div>
+                        <!-- <div class="details-popup-form-body__impregnation"><span class="details-popup-form-body__title">Пропитка:</span><span class="details-popup-form-body__q">20</span><span>(шт)</span><span class="details-popup-form-body__separator">=</span><span class="details-popup-form-body__price">900</span><span>р.</span></div> -->
+                    </div>
+                </div>
+                <div class="details-popup-form-footer"><span>Итого:</span><span class="details-popup-form-footer__total">19 213</span><span>руб.</span></div>
+            </div>
+            <form class="popup-form__person person-popup-form" name="mail" method="POST" action="/feedback.php">
+                <div class="person-popup-form__title">ДАННЫЕ ПОЛУЧАТЕЛЯ:</div>
+                <div class="person-popup-form__block-name person-popup-form__block">
+                    <span>Как к Вам обращаться?</span>
+                    <input name="name" class="person-popup-form__input-name" type="text" placeholder="Ф.И.О.">
+                </div>
+                <div class="person-popup-form__block-mail person-popup-form__block">
+                    <span>* Оставьте Email для связи</span>
+                    <input name="email" class="person-popup-form__input-email _req _email" type="text"
+                        placeholder="Email">
+                </div>
+                <div class="person-popup-form__block-tel person-popup-form__block">
+                    <span>* Телефон</span>
+                    <input name="tel" class="person-popup-form__input-tel" type="tel" placeholder="Телефон">
+                </div>
+                <div class="person-popup-form__block-com person-popup-form__block">
+                    <span>Комментарий</span>
+                    <textarea name="com" class="person-popup-form__textarea" name="com"
+                        placeholder="Комментарий"></textarea>
+                </div>
+            </form>
+            <div class="popup-form__btn-send">заказать!</div>
+        </div>
+    </div>
+
+<script defer src="script.js"></script></body>
+
+</html>
