@@ -63,14 +63,42 @@ mPopup.querySelector('.popup-zoom__close').addEventListener('click', () => {
 /***/ (function() {
 
 const backConstValue = {
+  // * Добавил
+  variantValue: 1,
   element: {
     s: 0.57,
-    price: 990,
+    // * Удалить
+    // price: 990,
+    // * Добавил
+    variant: {
+      1: 1000,
+      2: 2000,
+      3: 3000,
+    }
   },
   angle: {
     show: true,
-    s: 14,
-    price: 95,
+    // * Удалить
+    // s: 14,
+    // price: 95,
+    // * Добавил
+    variant: {
+      1: {
+        exp: 0.6,
+        s: 16,
+        price: 1000,
+      },
+      2: {
+        exp: 0.8,
+        s: 25,
+        price: 2000,
+      },
+      3: {
+        exp: 0.4,
+        s: 10,
+        price: 3000,
+      }
+    }
   },
   trowelling: {
     1: {
@@ -101,10 +129,10 @@ if (!backConstValue.angle.show) {
   const angularSub = document.createElement('div'),
         angularSubBody = document.querySelector('.angular-settings-order');
   try {
-  angularSubBody.textContent = '';
-  angularSub.classList.add('angular-settings-order__subtext');
-  angularSub.textContent = 'Угловые элементы не предусмотрены';
-  angularSubBody.appendChild(angularSub);
+    angularSubBody.textContent = '';
+    angularSub.classList.add('angular-settings-order__subtext');
+    angularSub.textContent = 'Угловые элементы не предусмотрены';
+    angularSubBody.appendChild(angularSub);
   } catch (e) {
     console.log(`Ошибка в блоке Проверка наличия углов\n${e}`);
   }
@@ -127,6 +155,11 @@ try {
       colors.forEach(color => {
         color.classList.remove('_active');
       });
+      // * Добавил
+      backConstValue.variantValue = i+1;
+      // * Добавил
+      numTotalPrevF()
+
       color.classList.add('_active');
       IndexColor = i + 1;
       srcColor = itemColors[i].querySelector('img').src;
@@ -151,6 +184,7 @@ try {
   console.log(`Ошибка в блоке Активация выбора Углов\n${e}`);
 }
 
+// ! Размеры
 const add1 = document.querySelector('.size-settings-order__add-or-del-1 .size-settings-order__add'),
   add2 = document.querySelector('.size-settings-order__add-or-del-2 .size-settings-order__add'),
   add3 = document.querySelector('.size-settings-order__add-or-del-3 .size-settings-order__add');
@@ -218,7 +252,7 @@ del4.addEventListener('click', () => {
   numTotalPrevF()
 })
 } catch (e) {
-  console.log(`Ошибка в блоке Активация выбора Углов\n${e}`);
+  console.log(`Ошибка в блоке размер стены\n${e}`);
 }
 
 //! Пупап формы 
@@ -283,7 +317,8 @@ function sum_total(mod, viewBlock = 0, value1 = 0, value2 = 0, value3 = 0, value
   if (mod == 'sizeOrAngular') {
     if (document.querySelector('.angular-settings-order__input').classList.contains('_active')) {
       document.querySelector('.details-popup-form-body__angle').style.display = 'block';
-      return [Math.ceil((value1 / 10000 - value2 / 100 * 0.2) * 1.1 / backConstValue.element.s) * backConstValue.element.s, Math.ceil(Math.ceil(value2 / 100 * backConstValue.angle.s) / backConstValue.angle.s) * backConstValue.angle.s]
+      // * Изменил
+      return [Math.ceil((value1 / 10000 - value2 / 100 * 0.2) * 1.1 / backConstValue.element.s) * backConstValue.element.s, Math.ceil(value2 / 100 /  backConstValue.angle.variant[backConstValue.variantValue].exp) * backConstValue.angle.variant[backConstValue.variantValue].s]
     } else {
       document.querySelector('.details-popup-form-body__angle').style.display = 'none';
       return [Math.ceil(value1 / 10000 * 1.1 / backConstValue.element.s) * backConstValue.element.s, 0]
@@ -323,12 +358,14 @@ function numTotalPrevF() {
       angular = document.querySelector('.angular-settings-order__input input');
   check = validate_hight_width_angular(hightAll, widthAll, angular);
   if (check) {
-    let hightA = 0
+    let hightA = 0;
     hightAll.forEach((hight, i) => { hightA += Number(hight.value * widthAll[i].value) })
     let [sizeSum, angularSum] = sum_total('sizeOrAngular', angleBody, hightA, angular.value);
     let trowellingSum = sum_total('trowelling', 0, hightA, trowellingIndex),
-      glueSum = sum_total('glue', glueBody, hightA, glue);
-    numTotalPrev.textContent = (backConstValue.element.price * sizeSum + angularSum * backConstValue.angle.price + backConstValue.trowelling[trowellingIndex].price * trowellingSum + glueSum * backConstValue.glue.price).toLocaleString();
+        glueSum = sum_total('glue', glueBody, hightA, glue);
+
+    // * Изменил
+    numTotalPrev.textContent = (backConstValue.element.variant[backConstValue.variantValue] * sizeSum + angularSum * backConstValue.angle.variant[backConstValue.variantValue].price + backConstValue.trowelling[trowellingIndex].price * trowellingSum + glueSum * backConstValue.glue.price).toLocaleString();
   } else {
     numTotalPrev.textContent = '0'
   }
@@ -403,10 +440,11 @@ btnAdd.addEventListener('click', () => {
       num.textContent = IndexColor;
 
       sizeQ.textContent = (sizeSum).toLocaleString();
-      sizePrice.textContent = (backConstValue.element.price * sizeSum).toLocaleString();
+      // * Изменил
+      sizePrice.textContent = (backConstValue.element.variant[backConstValue.variantValue] * sizeSum).toLocaleString();
 
       angleQ.textContent = (angularSum).toLocaleString();
-      anglePrice.textContent = (angularSum * backConstValue.angle.price).toLocaleString();
+      anglePrice.textContent = (angularSum * backConstValue.angle.variant[backConstValue.variantValue].price).toLocaleString();
 
       trowellingNum.textContent = trowellingIndex;
       trowellingQ.textContent = (trowellingSum).toLocaleString();
@@ -415,7 +453,8 @@ btnAdd.addEventListener('click', () => {
       glueQ.textContent = (glueSum).toLocaleString();
       gluePrice.textContent = (glueSum * backConstValue.glue.price).toLocaleString();
 
-      numTotal.textContent = (backConstValue.element.price * sizeSum + angularSum * backConstValue.angle.price + backConstValue.trowelling[trowellingIndex].price * trowellingSum + glueSum * backConstValue.glue.price).toLocaleString();
+      // * Изменил
+      numTotal.textContent = (backConstValue.element.variant[backConstValue.variantValue] * sizeSum + angularSum * backConstValue.angle.variant[backConstValue.variantValue].price + backConstValue.trowelling[trowellingIndex].price * trowellingSum + glueSum * backConstValue.glue.price).toLocaleString();
     }
 
   });
